@@ -1,1 +1,2 @@
-Presentasi 6: Loading and Working with Textures
+# Presentasi 6
+Loading and Working with Textures
