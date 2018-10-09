@@ -1,1 +1,1 @@
-Loading and Working with Texture
+Presentasi 6: Loading and Working with Textures
