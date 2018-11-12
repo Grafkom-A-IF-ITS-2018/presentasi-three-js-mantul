@@ -5,7 +5,6 @@
 <head>
     <title>Example 10.01 - Basic textures</title>
     <script type="text/javascript" src="libs/three.js"></script>
-
     <script type="text/javascript" src="libs/stats.js"></script>
     <script type="text/javascript" src="libs/dat.gui.js"></script>
     <script type="text/javascript" src="libs/DDSLoader.js"></script>
@@ -46,14 +45,14 @@
         webGLRenderer.setSize(window.innerWidth, window.innerHeight);
         webGLRenderer.shadowMapEnabled = true;
 
-        var polyhedronA = createMeshDDS(new THREE.IcosahedronGeometry(5, 0));
+        var polyhedronA = createMeshDDS(new THREE.BoxGeometry(5, 5, 5));
         polyhedronA.position.x = -12;
         scene.add(polyhedronA);
         
-        var polyhedronB = createMeshPVR(new THREE.IcosahedronGeometry(5, 0));
+        var polyhedronB = createMeshPVR(new THREE.BoxGeometry(5, 5, 5));
         scene.add(polyhedronB);
 
-        var polyhedronC = createMeshTGA(new THREE.IcosahedronGeometry(5, 0));
+        var polyhedronC = createMeshTGA(new THREE.BoxGeometry(5, 5, 5));
         polyhedronC.position.x = 12;
         scene.add(polyhedronC);
 
