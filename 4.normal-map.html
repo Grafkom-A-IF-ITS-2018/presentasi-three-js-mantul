@@ -3,11 +3,11 @@
 <html>
 
 <head>
-    <title>Example 10.03 - Normal maps</title>
-    <script type="text/javascript" src="../libs/three.js"></script>
+    <title>4 - Normal maps</title>
+    <script type="text/javascript" src="libs/three.js"></script>
 
-    <script type="text/javascript" src="../libs/stats.js"></script>
-    <script type="text/javascript" src="../libs/dat.gui.js"></script>
+    <script type="text/javascript" src="libs/stats.js"></script>
+    <script type="text/javascript" src="libs/dat.gui.js"></script>
     <style>
         body {
             /* set margin to 0 and overflow to hidden, to go fullscreen */
@@ -55,7 +55,7 @@
         scene.add(sphere2);
         console.log(sphere2.geometry.faceVertexUvs);
 
-        var floorTex = THREE.ImageUtils.loadTexture("../assets/textures/general/floor-wood.jpg");
+        var floorTex = THREE.ImageUtils.loadTexture("assets/textures/general/floor-wood.jpg");
         var plane = new THREE.Mesh(new THREE.BoxGeometry(200, 100, 0.1, 30), new THREE.MeshPhongMaterial({
             color: 0x3c3c3c,
             map: floorTex
@@ -115,11 +115,11 @@
             this.rotate = false;
 
             this.changeTexture = function (e) {
-                var texture = THREE.ImageUtils.loadTexture("../assets/textures/general/" + e + ".jpg");
+                var texture = THREE.ImageUtils.loadTexture("assets/textures/general/" + e + ".jpg");
                 sphere2.material.map = texture;
                 sphere1.material.map = texture;
 
-                var bump = THREE.ImageUtils.loadTexture("../assets/textures/general/" + e + "-normal.jpg");
+                var bump = THREE.ImageUtils.loadTexture("assets/textures/general/" + e + "-normal.jpg");
                 sphere2.material.normalMap = bump;
             };
 
@@ -140,8 +140,8 @@
         function createMesh(geom, imageFile, normal) {
 
             if (normal) {
-                var t = THREE.ImageUtils.loadTexture("../assets/textures/general/" + imageFile);
-                var m = THREE.ImageUtils.loadTexture("../assets/textures/general/" + normal);
+                var t = THREE.ImageUtils.loadTexture("assets/textures/general/" + imageFile);
+                var m = THREE.ImageUtils.loadTexture("assets/textures/general/" + normal);
                 var mat2 = new THREE.MeshPhongMaterial();
                 mat2.map = t;
                 mat2.normalMap = m;
@@ -149,7 +149,7 @@
                 var mesh = new THREE.Mesh(geom, mat2);
                 return mesh;
             } else {
-                var t = THREE.ImageUtils.loadTexture("../assets/textures/general/" + imageFile);
+                var t = THREE.ImageUtils.loadTexture("assets/textures/general/" + imageFile);
                 var mat1 = new THREE.MeshPhongMaterial({
                     map: t
                 });
